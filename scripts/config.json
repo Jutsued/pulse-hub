@@ -63,14 +63,13 @@
     { "category": "Advisors & Analysts", "source": "Benzinga", "url": "https://www.benzinga.com/feed" },
 
     { "category": "Press Releases", "source": "PR Newswire", "url": "https://www.prnewswire.com/rss/news-releases-list.rss" },
-    { "category": "Press Releases", "source": "Bureau of Labor Statistics", "url": "https://www.bls.gov/feed/news_release.rss" },
     { "category": "Press Releases", "source": "SEC", "url": "https://www.sec.gov/news/pressreleases.rss" },
     { "category": "Press Releases", "source": "Federal Reserve", "url": "https://www.federalreserve.gov/feeds/press_all.xml" },
 
     { "category": "Global Events", "source": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml" },
     { "category": "Global Events", "source": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml" },
     { "category": "Global Events", "source": "UN News", "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml" },
-    { "category": "Global Events", "source": "ReliefWeb Disasters", "url": "https://reliefweb.int/disasters/rss.xml" },
+    { "category": "Global Events", "source": "Google News: world", "url": "https://news.google.com/rss/search?q=world+news+when:1d&hl=en-US&gl=US&ceid=US:en" },
 
     { "category": "City (NYC)", "source": "Gothamist", "url": "https://gothamist.com/feed" },
     { "category": "City (NYC)", "source": "NY1", "url": "https://www.ny1.com/services/contentfeed.nyc%7Call-boroughs%7Cnews.landing.rss" }

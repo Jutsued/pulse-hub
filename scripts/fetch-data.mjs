@@ -391,10 +391,11 @@ function toIsoDate(mdY) {
 async function getGdelt(query) {
   const base = "https://api.gdeltproject.org/api/v2/doc/doc";
   const result = { toneTimeline: [], articles: [] };
+  await sleep(10000); // GDELT is shared by many GitHub runners; give it room
   try {
     const tone = await getJSON(
       `${base}?query=${encodeURIComponent(query)}&mode=timelinetone&timespan=30d&format=json`,
-      { retries: 3, retryWait: 15000 }
+      { retries: 4, retryWait: 20000 }
     );
     result.toneTimeline = (tone.timeline?.[0]?.data || []).map((p) => ({
       d: `${p.date.slice(0, 4)}-${p.date.slice(4, 6)}-${p.date.slice(6, 8)}`,
@@ -475,7 +476,7 @@ async function getCityEvents(city) {
     const end = new Date(Date.now() + city.daysAhead * 86400000);
     const fmt = (d) => d.toISOString().slice(0, 19);
     const where = `start_date_time >= '${fmt(start)}' AND start_date_time < '${fmt(end)}'`;
-    const url = `${city.eventsUrl}?$where=${encodeURIComponent(where)}&$order=start_date_time&$limit=1000`;
+    const url = `${city.eventsUrl}?$where=${encodeURIComponent(where)}&$order=start_date_time&$limit=5000`;
     let rows;
     try {
       rows = await getJSON(url, { retries: 3, retryWait: 10000 });
