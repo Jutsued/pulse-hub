@@ -1,0 +1,156 @@
+[
+ {
+  "date": "2026-10-29",
+  "pulse": 46.1,
+  "sentiment": {
+   "News Channels": 0.062,
+   "Advisors & Analysts": -0.069,
+   "Press Releases": 0.09,
+   "Global Events": 0.075,
+   "City (NYC)": 0.015
+  }
+ },
+ {
+  "date": "2026-10-30",
+  "pulse": 42.5,
+  "sentiment": {
+   "News Channels": -0.192,
+   "Advisors & Analysts": 0.054,
+   "Press Releases": 0.028,
+   "Global Events": 0.089,
+   "City (NYC)": -0.014
+  }
+ },
+ {
+  "date": "2026-10-31",
+  "pulse": 58.6,
+  "sentiment": {
+   "News Channels": -0.112,
+   "Advisors & Analysts": -0.047,
+   "Press Releases": 0.094,
+   "Global Events": -0.011,
+   "City (NYC)": -0.175
+  }
+ },
+ {
+  "date": "2026-11-01",
+  "pulse": 53.8,
+  "sentiment": {
+   "News Channels": 0.085,
+   "Advisors & Analysts": -0.006,
+   "Press Releases": -0.157,
+   "Global Events": 0.094,
+   "City (NYC)": -0.028
+  }
+ },
+ {
+  "date": "2026-11-02",
+  "pulse": 67.6,
+  "sentiment": {
+   "News Channels": -0.142,
+   "Advisors & Analysts": -0.075,
+   "Press Releases": -0.026,
+   "Global Events": -0.104,
+   "City (NYC)": -0.095
+  }
+ },
+ {
+  "date": "2026-11-03",
+  "pulse": 69.6,
+  "sentiment": {
+   "News Channels": -0.174,
+   "Advisors & Analysts": 0.077,
+   "Press Releases": 0.078,
+   "Global Events": -0.127,
+   "City (NYC)": -0.083
+  }
+ },
+ {
+  "date": "2026-11-04",
+  "pulse": 56.2,
+  "sentiment": {
+   "News Channels": -0.059,
+   "Advisors & Analysts": 0.039,
+   "Press Releases": 0.008,
+   "Global Events": 0.079,
+   "City (NYC)": -0.102
+  }
+ },
+ {
+  "date": "2026-11-05",
+  "pulse": 66.3,
+  "sentiment": {
+   "News Channels": 0.076,
+   "Advisors & Analysts": -0.044,
+   "Press Releases": 0.087,
+   "Global Events": 0.066,
+   "City (NYC)": -0.165
+  }
+ },
+ {
+  "date": "2026-11-06",
+  "pulse": 67.5,
+  "sentiment": {
+   "News Channels": 0.004,
+   "Advisors & Analysts": 0.05,
+   "Press Releases": -0.155,
+   "Global Events": 0.012,
+   "City (NYC)": -0.087
+  }
+ },
+ {
+  "date": "2026-11-07",
+  "pulse": 60,
+  "sentiment": {
+   "News Channels": -0.028,
+   "Advisors & Analysts": -0.139,
+   "Press Releases": -0.179,
+   "Global Events": -0.189,
+   "City (NYC)": -0.173
+  }
+ },
+ {
+  "date": "2026-11-08",
+  "pulse": 66.7,
+  "sentiment": {
+   "News Channels": -0.14,
+   "Advisors & Analysts": 0.082,
+   "Press Releases": -0.107,
+   "Global Events": -0.092,
+   "City (NYC)": 0.084
+  }
+ },
+ {
+  "date": "2026-11-09",
+  "pulse": 66,
+  "sentiment": {
+   "News Channels": -0.157,
+   "Advisors & Analysts": -0.03,
+   "Press Releases": -0.14,
+   "Global Events": -0.006,
+   "City (NYC)": -0.055
+  }
+ },
+ {
+  "date": "2026-11-10",
+  "pulse": 62.7,
+  "sentiment": {
+   "News Channels": -0.015,
+   "Advisors & Analysts": -0.197,
+   "Press Releases": -0.137,
+   "Global Events": -0.068,
+   "City (NYC)": -0.187
+  }
+ },
+ {
+  "date": "2026-11-11",
+  "pulse": 61.5,
+  "sentiment": {
+   "News Channels": -0.148,
+   "Advisors & Analysts": -0.188,
+   "Press Releases": -0.082,
+   "Global Events": 0.082,
+   "City (NYC)": 0.001
+  }
+ }
+]
