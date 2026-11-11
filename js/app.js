@@ -12,6 +12,7 @@ import {
   shortDateTime, shortDate, timeAgo, escapeHtml, safeUrl,
 } from "./format.js";
 import { draw, sparkline, signedBars } from "./charts.js";
+import { trackTab } from "./analytics.js";
 
 const state = {
   latest: null,
@@ -195,6 +196,7 @@ function showTab(tab) {
   $$('[role="tab"]').forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
   $$(".tab-panel").forEach((panel) => (panel.hidden = panel.id !== tab.getAttribute("aria-controls")));
   history.replaceState(null, "", `#${tab.id.slice(2)}`);
+  trackTab(tab.id.slice(2));
   renderTab(tab.getAttribute("aria-controls"));
 }
 

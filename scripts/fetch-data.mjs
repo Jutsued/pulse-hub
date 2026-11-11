@@ -723,9 +723,27 @@ async function main() {
 
   await writeFile(path.join(DATA_DIR, "latest.json"), JSON.stringify(latest));
   await updateHistory(latest);
+  await writeSitemap(today);
 
   const ok = sourceStatus.filter((s) => s.ok).length;
   console.log(`\nDone: ${ok}/${sourceStatus.length} sources OK. Pulse score ${pulse.score} (${pulse.label}).`);
+}
+
+// Rewrites sitemap.xml with today's date so search engines know the page is fresh.
+async function writeSitemap(today) {
+  const site = "https://pulsehubmarkets.com";
+  const pages = [
+    { path: "/", changefreq: "daily", priority: "1.0" },
+    { path: "/about.html", changefreq: "monthly", priority: "0.5" },
+  ];
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages
+  .map((p) => `  <url><loc>${site}${p.path}</loc><lastmod>${today}</lastmod><changefreq>${p.changefreq}</changefreq><priority>${p.priority}</priority></url>`)
+  .join("\n")}
+</urlset>
+`;
+  await writeFile(path.join(ROOT, "sitemap.xml"), xml);
 }
 
 // One summary row per day, newest last. Re-running on the same day replaces that day's row.

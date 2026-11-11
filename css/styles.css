@@ -517,3 +517,27 @@ input[type="search"] {
   .chart-box.tall { height: 300px; }
   .updated { display: none; }
 }
+
+/* ---------- about page ---------- */
+.prose {
+  max-width: 70ch;
+  padding-top: 40px;
+}
+
+.prose h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  font-stretch: 125%;
+  line-height: 1.05;
+  margin: 0 0 20px;
+}
+
+.prose h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 32px 0 8px;
+}
+
+.prose p { margin: 0 0 14px; }
+.footer p + p { margin-top: 6px; }
+a.updated { color: var(--accent); }

@@ -2,7 +2,7 @@
 
 A free daily dashboard that reads the market's mood and compares what different kinds of sources are saying: news channels, advisors and analysts, press releases, Reddit, global news, and events around New York City.
 
-**Live site:** https://jutsued.github.io/pulse-hub/
+**Live site:** https://pulsehubmarkets.com
 
 ## How it works
 

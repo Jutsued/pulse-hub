@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About &amp; privacy — Pulse Hub</title>
+  <meta name="description" content="What Pulse Hub is, where its data comes from, how the pulse score works, and how the site handles your privacy." />
+  <link rel="canonical" href="https://pulsehubmarkets.com/about.html" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script type="module" src="js/analytics.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" style="color: inherit; text-decoration: none">
+      <svg class="brand-mark" viewBox="0 0 40 20" aria-hidden="true"><polyline points="0,10 10,10 14,3 19,17 23,6 26,10 40,10" /></svg>
+      <span>Pulse Hub</span>
+    </a>
+    <a class="updated" href="./">Back to the dashboard</a>
+  </header>
+
+  <main class="prose">
+    <h1>About Pulse Hub</h1>
+    <p>Pulse Hub is a free, one-page reading of the market's mood. Every day it collects stock prices, fear-and-greed gauges, Treasury yields, crypto prices, and hundreds of headlines. It then compares how upbeat or gloomy each kind of source is: news channels, advisors and analysts, company press releases, Reddit, world news, and local New York City news.</p>
+    <p>It's built and maintained by Pablo Bonilla, a web developer in New York City. The code is open on <a href="https://github.com/Jutsued/pulse-hub">GitHub</a>.</p>
+
+    <h2>Where the data comes from</h2>
+    <p>An automated job runs every weekday after the US market closes and every morning. It reads public, free sources, including Yahoo Finance and Stooq (prices), CNN and alternative.me (fear &amp; greed), the U.S. Treasury (yields), CoinGecko (crypto), RSS feeds from CNBC, MarketWatch, The Wall Street Journal, The New York Times, BBC, Seeking Alpha, Nasdaq.com, Investing.com, Benzinga, PR Newswire, the SEC and the Federal Reserve, GDELT (world news tone), USGS (earthquakes), ApeWisdom and Stocktwits (social media buzz), and NYC Open Data (permitted city events).</p>
+    <p>Headlines link to the original publisher. Pulse Hub shows titles only and doesn't copy articles.</p>
+
+    <h2>How the pulse score works</h2>
+    <p>The pulse score is a homemade 0–100 reading: 0 is extreme fear and 100 is extreme greed. It averages five parts: where the S&amp;P 500 sits against its 50-day average, the VIX volatility index, the share of tracked stocks and sectors that rose that day, the tone of news and analyst headlines, and CNN's Fear &amp; Greed Index. Headline tone uses a fixed word list, so every source is scored the same way.</p>
+
+    <h2>Not financial advice</h2>
+    <p>Pulse Hub is for information and education only. Nothing here is a recommendation to buy or sell anything. Data can be delayed or wrong; always check with your broker or a licensed advisor before making decisions.</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p>Pulse Hub has no accounts, no sign-up and no forms, and it never asks for personal information.</p>
+    <p>The site uses Google Analytics to count visits and see which sections people use. Google Analytics sets cookies and collects information such as pages viewed, approximate location, device and browser. IP addresses are anonymized. You can read <a href="https://policies.google.com/technologies/partner-sites">how Google uses this data</a> or opt out with the <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics opt-out add-on</a>.</p>
+    <p>If advertising is added in the future, this page will be updated to say which ad partners are used and how they use cookies.</p>
+    <p>The site is hosted on GitHub Pages, which may keep standard server logs. Fonts load from Google Fonts and charts from jsDelivr.</p>
+    <p>Questions or corrections: <a href="https://github.com/Jutsued/pulse-hub/issues">open an issue on GitHub</a>.</p>
+    <p class="muted">Last updated November 11, 2026.</p>
+  </main>
+
+  <footer class="footer">
+    <p>Pulse Hub is an automated summary of public data for information only. It is not financial advice.</p>
+  </footer>
+</body>
+</html>
