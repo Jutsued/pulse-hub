@@ -41,19 +41,31 @@ function logStatus(name, ok, detail = "") {
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-// fetch() with a timeout and friendly errors.
-async function getText(url, { headers = {}, timeout = 20000 } = {}) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), timeout);
-  try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": UA, Accept: "*/*", ...headers },
-      signal: controller.signal,
-    });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return await res.text();
-  } finally {
-    clearTimeout(timer);
+// fetch() with a timeout, friendly errors, and retries.
+// Busy free APIs often answer 429 ("too many requests") or 5xx ("try later"),
+// so we wait and try again a couple of times before giving up.
+async function getText(url, { headers = {}, timeout = 25000, retries = 2, retryWait = 8000 } = {}) {
+  for (let attempt = 0; ; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": UA, Accept: "*/*", ...headers },
+        signal: controller.signal,
+      });
+      if (!res.ok) {
+        const err = new Error(`HTTP ${res.status}`);
+        err.retryable = res.status === 429 || res.status >= 500;
+        throw err;
+      }
+      return await res.text();
+    } catch (err) {
+      const retryable = err.retryable || err.name === "AbortError" || err.message === "fetch failed";
+      if (!retryable || attempt >= retries) throw err;
+      await sleep(retryWait * (attempt + 1)); // wait longer each time
+    } finally {
+      clearTimeout(timer);
+    }
   }
 }
 
@@ -221,8 +233,9 @@ async function getFeeds(feeds, watchlist) {
   const headlines = [];
   for (const feed of feeds) {
     try {
-      const headers = feed.url.includes("sec.gov") ? { "User-Agent": SEC_UA } : {};
-      const xml = await getText(feed.url, { headers });
+      // Government sites (SEC, BLS) ask automated tools to identify themselves.
+      const headers = /sec\.gov|bls\.gov/.test(feed.url) ? { "User-Agent": SEC_UA } : {};
+      const xml = await getText(feed.url, { headers, retries: 1, retryWait: 4000 });
       const items = parseFeed(xml).slice(0, 25);
       if (!items.length) throw new Error("no items found");
       for (const item of items) {
@@ -380,7 +393,8 @@ async function getGdelt(query) {
   const result = { toneTimeline: [], articles: [] };
   try {
     const tone = await getJSON(
-      `${base}?query=${encodeURIComponent(query)}&mode=timelinetone&timespan=30d&format=json`
+      `${base}?query=${encodeURIComponent(query)}&mode=timelinetone&timespan=30d&format=json`,
+      { retries: 3, retryWait: 15000 }
     );
     result.toneTimeline = (tone.timeline?.[0]?.data || []).map((p) => ({
       d: `${p.date.slice(0, 4)}-${p.date.slice(4, 6)}-${p.date.slice(6, 8)}`,
@@ -397,7 +411,8 @@ async function getGdelt(query) {
 
   try {
     const list = await getJSON(
-      `${base}?query=${encodeURIComponent(query)}&mode=artlist&maxrecords=40&sort=datedesc&timespan=1d&format=json`
+      `${base}?query=${encodeURIComponent(query)}&mode=artlist&maxrecords=40&sort=datedesc&timespan=1d&format=json`,
+      { retries: 3, retryWait: 15000 }
     );
     result.articles = (list.articles || []).map((a) => ({
       title: decodeEntities(a.title),
@@ -461,7 +476,16 @@ async function getCityEvents(city) {
     const fmt = (d) => d.toISOString().slice(0, 19);
     const where = `start_date_time >= '${fmt(start)}' AND start_date_time < '${fmt(end)}'`;
     const url = `${city.eventsUrl}?$where=${encodeURIComponent(where)}&$order=start_date_time&$limit=1000`;
-    const rows = await getJSON(url);
+    let rows;
+    try {
+      rows = await getJSON(url, { retries: 3, retryWait: 10000 });
+    } catch {
+      // Backup: ask for the newest events without a date filter, then filter here.
+      const all = await getJSON(`${city.eventsUrl}?$order=start_date_time DESC&$limit=3000`, { retries: 2, retryWait: 10000 });
+      rows = all
+        .filter((r) => r.start_date_time >= fmt(start) && r.start_date_time < fmt(end))
+        .sort((a, b) => a.start_date_time.localeCompare(b.start_date_time));
+    }
     const events = rows.map((r) => ({
       name: r.event_name,
       type: r.event_type,

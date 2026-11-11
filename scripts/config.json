@@ -53,7 +53,7 @@
     { "category": "News Channels", "source": "CNBC Markets", "url": "https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258" },
     { "category": "News Channels", "source": "MarketWatch", "url": "https://feeds.content.dowjones.io/public/rss/mw_topstories" },
     { "category": "News Channels", "source": "WSJ Markets", "url": "https://feeds.content.dowjones.io/public/rss/RSSMarketsMain" },
-    { "category": "News Channels", "source": "Yahoo Finance", "url": "https://finance.yahoo.com/news/rssindex" },
+    { "category": "News Channels", "source": "Google News: markets", "url": "https://news.google.com/rss/search?q=stock+market+when:1d&hl=en-US&gl=US&ceid=US:en" },
     { "category": "News Channels", "source": "NYT Business", "url": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml" },
     { "category": "News Channels", "source": "BBC Business", "url": "https://feeds.bbci.co.uk/news/business/rss.xml" },
 
@@ -63,14 +63,14 @@
     { "category": "Advisors & Analysts", "source": "Benzinga", "url": "https://www.benzinga.com/feed" },
 
     { "category": "Press Releases", "source": "PR Newswire", "url": "https://www.prnewswire.com/rss/news-releases-list.rss" },
-    { "category": "Press Releases", "source": "GlobeNewswire", "url": "https://www.globenewswire.com/RssFeed/orgclass/1/feedTitle/GlobeNewswire%20-%20News%20about%20Public%20Companies" },
+    { "category": "Press Releases", "source": "Bureau of Labor Statistics", "url": "https://www.bls.gov/feed/news_release.rss" },
     { "category": "Press Releases", "source": "SEC", "url": "https://www.sec.gov/news/pressreleases.rss" },
     { "category": "Press Releases", "source": "Federal Reserve", "url": "https://www.federalreserve.gov/feeds/press_all.xml" },
 
     { "category": "Global Events", "source": "BBC World", "url": "https://feeds.bbci.co.uk/news/world/rss.xml" },
     { "category": "Global Events", "source": "Al Jazeera", "url": "https://www.aljazeera.com/xml/rss/all.xml" },
     { "category": "Global Events", "source": "UN News", "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml" },
-    { "category": "Global Events", "source": "GDACS Disasters", "url": "https://www.gdacs.org/xml/rss.xml" },
+    { "category": "Global Events", "source": "ReliefWeb Disasters", "url": "https://reliefweb.int/disasters/rss.xml" },
 
     { "category": "City (NYC)", "source": "Gothamist", "url": "https://gothamist.com/feed" },
     { "category": "City (NYC)", "source": "NY1", "url": "https://www.ny1.com/services/contentfeed.nyc%7Call-boroughs%7Cnews.landing.rss" }
