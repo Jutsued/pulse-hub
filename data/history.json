@@ -144,20 +144,21 @@
  },
  {
   "date": "2026-11-11",
-  "pulse": 41,
+  "pulse": 41.6,
   "pulseParts": {
    "momentum": 30.2,
    "volatility": 67.6,
    "breadth": 33.3,
-   "news": 40.5,
+   "news": 43.3,
    "cnn": 33.4
   },
   "sentiment": {
-   "News Channels": -0.115,
-   "Advisors & Analysts": 0.001,
+   "News Channels": -0.11,
+   "Advisors & Analysts": 0.029,
    "Press Releases": 0.019,
    "Global Events": -0.275,
-   "City (NYC)": -0.103
+   "City (NYC)": -0.103,
+   "Global News (GDELT)": -0.036
   },
   "spx": 7520.93,
   "nasdaq": 25065.88,
