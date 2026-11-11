@@ -751,7 +751,8 @@ async function updateHistory(latest) {
     cryptoFearGreed: latest.fearGreed.crypto?.score ?? null,
     gdeltTone: latest.global.toneTimeline.at(-1)?.v ?? null,
   };
-  history = history.filter((h) => h.date !== row.date);
+  // Drop today's old row, plus any leftover sample rows (real rows always have an S&P 500 close).
+  history = history.filter((h) => h.date !== row.date && h.spx !== undefined);
   history.push(row);
   history.sort((a, b) => a.date.localeCompare(b.date));
   history = history.slice(-730); // keep two years
