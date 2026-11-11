@@ -6,7 +6,7 @@
 // Visits from localhost are ignored so testing doesn't count.
 // ------------------------------------------------------------------
 
-const GA_MEASUREMENT_ID = "";
+const GA_MEASUREMENT_ID = "G-QMXGBSL7ZG";
 
 if (GA_MEASUREMENT_ID && !["localhost", "127.0.0.1"].includes(location.hostname)) {
   const script = document.createElement("script");
