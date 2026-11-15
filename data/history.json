@@ -102,5 +102,31 @@
   "cnnFearGreed": 38.6,
   "cryptoFearGreed": 13,
   "gdeltTone": null
+ },
+ {
+  "date": "2026-11-15",
+  "pulse": 45.6,
+  "pulseParts": {
+   "momentum": 36.2,
+   "volatility": 68.3,
+   "breadth": 40,
+   "news": 44.9,
+   "cnn": 38.6
+  },
+  "sentiment": {
+   "News Channels": -0.068,
+   "Advisors & Analysts": 0.007,
+   "Press Releases": -0.038,
+   "Global Events": -0.113,
+   "City (NYC)": -0.17,
+   "Global News (GDELT)": -0.133
+  },
+  "spx": 7561.67,
+  "nasdaq": 25136.27,
+  "vix": 19.3,
+  "tenYear": 5.15,
+  "cnnFearGreed": 38.6,
+  "cryptoFearGreed": 10,
+  "gdeltTone": -0.39
  }
 ]
