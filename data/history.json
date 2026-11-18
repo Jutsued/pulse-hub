@@ -182,27 +182,26 @@
  },
  {
   "date": "2026-11-18",
-  "pulse": 27.6,
+  "pulse": 32.6,
   "pulseParts": {
-   "momentum": 8.9,
-   "volatility": 41.5,
-   "breadth": 20,
-   "news": 42.2,
-   "cnn": 25.2
+   "momentum": 8.1,
+   "volatility": 46.9,
+   "breadth": 40,
+   "news": 43.6,
+   "cnn": 24.6
   },
   "sentiment": {
-   "News Channels": -0.069,
-   "Advisors & Analysts": -0.025,
-   "Press Releases": -0.038,
-   "Global Events": -0.189,
-   "City (NYC)": -0.168,
-   "Global News (GDELT)": -0.091
+   "News Channels": -0.042,
+   "Advisors & Analysts": -0.035,
+   "Press Releases": -0.017,
+   "Global Events": -0.137,
+   "City (NYC)": -0.18
   },
-  "spx": 7340.53,
-  "nasdaq": 24328.38,
-  "vix": 25.46,
+  "spx": 7328.48,
+  "nasdaq": 24462.7,
+  "vix": 24.22,
   "tenYear": 5.1,
-  "cnnFearGreed": 25.2,
+  "cnnFearGreed": 24.6,
   "cryptoFearGreed": 11,
   "gdeltTone": -0.39
  }
